@@ -1,12 +1,359 @@
-/* App.css */
+@import "~font-awesome/css/font-awesome.min.css";
+
+/* Global Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f1ea;
+  color: #8a7d6b;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #e0d5c1;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #D7B899;
+  border-bottom: 2px solid #B2996E;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 2%;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: #4B3822 !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  margin-right: 15px;
+}
+
+.navbar .nav-link:hover {
+  color: #413a34 !important;
+  background-color: #B2996E;
+  border-radius: 4px;
+}
+
+.navbar .navbar-toggler-icon {
+  filter: invert(0.5);
+}
+
+.navbar .dropdown-menu {
+  background-color: #B2996E;
+  border-radius: 4px;
+}
+
+.navbar .dropdown-item {
+  color: #4d4237;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: #cab494;
+  color: #4B3822;
+}
+
+/* Product List Styles */
+.product-list {
+  padding: 20px 0;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #e0d5c1;
+  border-radius: 5px;
+}
+
+/* Search, Filter, and Sort Boxes */
+.search-box, .filter-box, .sort-box {
+  position: relative;
+  flex: 1;
+  margin: 0 10px;
+  min-width: 150px; /* Minimum width to prevent too much squeezing on smaller screens */
+}
+
+.search-input, .filter-select, .sort-select {
+  padding: 10px 35px 10px 40px;
+  width: 100%;
+  border: 1px solid #8a7d6b;
+  background-color: #f4f1ea;
+  color: #8a7d6b;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Icons for Search, Filter, and Sort */
+.search-icon, .filter-icon, .sort-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8a7d6b;
+  font-size: 1.2rem;
+}
+
+/* Product Card Styles */
+.product-card {
+  margin-bottom: 20px;
+  flex-basis: calc(33.33% - 20px); /* For 3 cards in a row */
+  box-sizing: border-box;
+}
+
+.product-card .card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.product-card .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-card .card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.product-card .card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+.product-card .card-body {
+  padding: 15px;
+}
+
+.product-card .card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.product-card .btn {
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  margin-right: 5px;
+}
+
+/* Button Styles */
+.btn-info, .btn-primary, .btn-outline-info, .btn-outline-primary {
+  background-color: #8a7d6b;
+  border-color: #8a7d6b;
+  color: #f4f1ea;
+  transition: all 0.3s ease;
+}
+
+.btn-info:hover, .btn-primary:hover, .btn-outline-info:hover, .btn-outline-primary:hover {
+  background-color: #6b6150;
+  border-color: #6b6150;
+  color: #f4f1ea;
+}
+
+/* Overriding Bootstrap's default styles */
+.btn-info, .btn-primary {
+  background-color: #8a7d6b !important;
+  border-color: #8a7d6b !important;
+  color: #f4f1ea !important;
+}
+
+.btn-info:hover, .btn-primary:hover {
+  background-color: #6b6150 !important;
+  border-color: #6b6150 !important;
+  color: #f4f1ea !important;
+}
+
+/* Overriding Bootstrap's btn-outline-info and btn-outline-primary styles */
+.product-list .btn-outline-info, .product-list .btn-outline-primary {
+  color: #8a7d6b !important;
+  border-color: #8a7d6b !important;
+  transition: all 0.3s ease;
+}
+
+.product-list .btn-outline-info:hover, .product-list .btn-outline-primary:hover {
+  background-color: #8a7d6b !important;
+  border-color: #6b6150 !important;
+  color: #f4f1ea !important;
+}
+
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .product-card {
+    flex-basis: calc(50% - 20px); /* For 2 cards in a row on medium screens */
   }
-  
-  .container {
-    padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    flex-basis: 100%; /* For 1 card in a row on small screens */
   }
-  
-  /* Add other styles as needed */
-  
+}
+
+/* Modal Enhancement */
+.modal-content {
+  background-color: #e0d5c1;
+  color: #8a7d6b;
+}
+
+.modal-header, .modal-footer {
+  border-color: #8a7d6b;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.modal-body img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.modal-body p {
+  font-size: 1.2rem;
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-input i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Cart Styles */
+.cart-container {
+  padding: 20px;
+  border: 1px solid #e0d5c1;
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: #f4f1ea;
+}
+
+.cart-item {
+  padding: 15px;
+  border-bottom: 1px solid #e0d5c1;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 1.2rem;
+  padding: 15px;
+}
+
+.checkout-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Checkout Page Styles */
+.checkout {
+  padding: 20px;
+  background-color: #e0d5c1;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkout h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.checkout input[type="text"], .checkout input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #8a7d6b;
+  border-radius: 5px;
+}
+
+.checkout-button {
+  background-color: #8a7d6b;
+  color: #f4f1ea;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+  background-color: #6b6150;
+}
+
+.order-confirmation {
+  padding: 20px;
+  background-color: #e0d5c1;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-confirmation h2, .order-confirmation h3 {
+  color: #8a7d6b;
+}
+
+.order-confirmation p {
+  margin-bottom: 15px;
+}
+
+.order-confirmation ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-confirmation li {
+  padding: 5px 0;
+}
+
+/* User Profile Styles */
+.user-profile {
+  padding: 20px;
+  background-color: #e0d5c1;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile h2, .user-profile h3 {
+  margin-top: 20px;
+  color: #8a7d6b;
+}
+
+.user-profile p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.user-profile ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.user-profile ul li {
+  margin-bottom: 20px;
+}
+
+.user-profile ul ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+/* Add this to your App.css */
+.nav-link img {
+  margin-right: 5px;
+}
