@@ -54,15 +54,17 @@ function ProductDetail() {
             max={Math.min(product.stock, 10)} 
           />
 
-          <Button variant="primary" onClick={handleAddToCart}>Add to Cart</Button>
-          <Button variant="secondary" onClick={handleAddToWishlist}>Add to Wishlist</Button>
-          <Button variant="info" href="/checkout">Buy Now</Button>
+          <div className='add-or-buy'>
+            <Button variant="primary" onClick={handleAddToCart} style={{ marginBottom: '8px' }}>Add to Cart</Button>
+            <Button variant="secondary" onClick={handleAddToWishlist} style={{ marginBottom: '8px' }}>Add to Wishlist</Button>
+            <Button variant="info" href="/checkout">Buy Now</Button>
+          </div>
         </Card.Body>
 
       </Card>
 
       <div className="related-products">
-        <h3>Related Products</h3>
+        <h3>You Might Also Like</h3>
         {relatedProducts.map(relatedProduct => (
           <Card key={relatedProduct.id} style={{ width: '18rem', margin: '10px' }}>
             <Card.Img variant="top" src={relatedProduct.imageURL} />

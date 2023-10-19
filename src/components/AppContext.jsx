@@ -13,6 +13,13 @@ export const AppProvider = ({ children }) => {
         { id: 3, name: 'Shoe C', price: 70, image: 'path_to_image_C', category: 'Sneakers', stock: 20 },
         { id: 4, name: 'Shoe D', price: 80, image: 'path_to_image_D', category: 'Boots', stock: 5 },
         { id: 5, name: 'Shoe E', price: 90, image: 'path_to_image_E', category: 'Sneakers', stock: 12 },
+        { id: 6, name: 'Lace A', price: 100, image: 'path_to_lace_A', category: 'Accessories', stock: 30 },
+        { id: 7, name: 'Lace B', price: 110, image: 'path_to_lace_B', category: 'Accessories', stock: 25 },
+        { id: 8, name: 'Socks A', price: 120, image: 'path_to_socks_A', category: 'Accessories', stock: 40 },
+        { id: 9, name: 'Socks B', price: 130, image: 'path_to_socks_B', category: 'Accessories', stock: 45 },
+        { id: 10, name: 'Lace C', price: 140, image: 'path_to_lace_C', category: 'Accessories', stock: 20 },
+        { id: 11, name: 'Socks C', price: 150, image: 'path_to_socks_C', category: 'Accessories', stock: 38 },
+        { id: 12, name: 'Lace D', price: 160, image: 'path_to_lace_D', category: 'Accessories', stock: 28 },
     ];
     
 

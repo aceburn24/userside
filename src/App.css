@@ -1,9 +1,22 @@
 @import "~font-awesome/css/font-awesome.min.css";
 
+
+/* Variables */
+:root {
+  --background-color: #F7F7F7F7;
+  --navbar-color: #b8a98d; 
+  --navbar-text-color: #8a6d52; 
+  --hover-color: #a08a70;
+  --footer-text: #FFDC83;
+  --footer-background: #403F3F; 
+  --chat-bg-color: #8a6d52;
+  --chat-text-color: #f7f2e7;
+}
+
 /* Global Styles */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f1ea;
+  background-color: var(--background-color);
   color: #8a7d6b;
   line-height: 1.6;
   margin: 0;
@@ -13,57 +26,172 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #e0d5c1;
+  background-color: var(--background-color);
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Navbar Styles */
 .navbar {
-  background-color: #D7B899;
-  border-bottom: 2px solid #B2996E;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--navbar-color);
   padding: 10px 2%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .navbar-brand,
 .navbar .nav-link {
-  color: #4B3822 !important;
-  font-weight: 500;
+  color: var(--navbar-text-color) !important;
+  font-weight: 600;
   transition: color 0.3s ease;
   margin-right: 15px;
 }
 
 .navbar .nav-link:hover {
-  color: #413a34 !important;
-  background-color: #B2996E;
-  border-radius: 4px;
+  color: var(--hover-color) !important;
+  border-bottom: 3px solid var(--hover-color);
 }
 
 .navbar .navbar-toggler-icon {
-  filter: invert(0.5);
+  filter: invert(0.9);
 }
 
 .navbar .dropdown-menu {
-  background-color: #B2996E;
+  background-color: var(--navbar-color);
   border-radius: 4px;
 }
 
 .navbar .dropdown-item {
-  color: #4d4237;
+  color: var(--footer-text);
   transition: background-color 0.3s ease;
 }
 
 .navbar .dropdown-item:hover {
-  background-color: #cab494;
-  color: #4B3822;
+  background-color: var(--hover-color);
+  color: var(--navbar-text-color);
+}
+
+/* Header Styles */
+.header-upper {
+  background-color: var(--background-color);
+}
+
+.container-xxl{
+  margin-left: auto;
+}
+
+.page-text-color {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 23px;
+}
+
+.spaces-between {
+  padding: 20px;
+}
+
+.input-wrapper {
+  background-color: #EAEAEA;
+  border-radius: 13px;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-search {
+  background-color: transparent;
+  border: none;
+  color: #000000B2;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.input-search {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.input-search:focus {
+  outline: none;
+}
+
+.header-right {
+  color: black;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+/* Footer Styles */
+
+
+.footer {
+  background-color: var(--footer-background);
+  padding: 30px 2%;
+  color: var(--footer-text);
+}
+
+.footer-container{
+  background-color: var(--footer-background);
+}
+
+.social-fb {
+  color: #1877F2;
+  transition: color 0.3s ease;
+}
+
+.social-twt{
+  color: #00acee;
+}
+
+.social-ig{
+  color: #e95950;
+}
+
+
+/* Chatbot Styles */
+.chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.chat-button {
+  background-color: var(--chat-bg-color);
+  color: var(--chat-text-color);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.chat-button:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.05);
+}
+
+.chatbox {
+  background-color: var(--background-color);
+  width: 320px;
+  height: 420px;
+  border: 1px solid var(--hover-color);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Product List Styles */
-.product-list {
-  padding: 20px 0;
-}
+  .product-list {
+    background-color: #F7F7F7F7;
+  }
 
 .filters {
   display: flex;
@@ -72,7 +200,7 @@ body {
   align-items: center;
   margin-bottom: 20px;
   padding: 10px;
-  background-color: #e0d5c1;
+  background-color: #F7F7F7F7;
   border-radius: 5px;
 }
 
@@ -106,12 +234,14 @@ body {
 
 /* Product Card Styles */
 .product-card {
+  background-color: #F7F7F7F7;
   margin-bottom: 20px;
   flex-basis: calc(33.33% - 20px); /* For 3 cards in a row */
   box-sizing: border-box;
 }
 
 .product-card .card {
+  background-color: #FFFFFF;
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -132,6 +262,15 @@ body {
 
 .product-card .card-body {
   padding: 15px;
+  position: relative;
+}
+
+.add-or-buy{
+  display: flex;
+  flex-direction: column;
+  top: 23px;
+  left: 400px;
+  position: absolute;
 }
 
 .product-card .card-title {
@@ -147,27 +286,27 @@ body {
 }
 
 /* Button Styles */
-.btn-info, .btn-primary, .btn-outline-info, .btn-outline-primary {
+.btn-info, .btn-primary, .btn-secondary, .btn-outline-info, .btn-outline-primary, .btn-outline-secondary{
   background-color: #8a7d6b;
   border-color: #8a7d6b;
   color: #f4f1ea;
   transition: all 0.3s ease;
 }
 
-.btn-info:hover, .btn-primary:hover, .btn-outline-info:hover, .btn-outline-primary:hover {
+.btn-info:hover, .btn-primary:hover, .btn-secondary:hover, .btn-outline-info:hover, .btn-outline-primary:hover, .btn-outline-secondary:hover{
   background-color: #6b6150;
   border-color: #6b6150;
   color: #f4f1ea;
 }
 
 /* Overriding Bootstrap's default styles */
-.btn-info, .btn-primary {
-  background-color: #8a7d6b !important;
+.btn-info, .btn-primary, .btn-secondary {
+  background-color: #000000B5 !important;
   border-color: #8a7d6b !important;
   color: #f4f1ea !important;
 }
 
-.btn-info:hover, .btn-primary:hover {
+.btn-info:hover, .btn-primary:hover, .btn-secondary:hover{
   background-color: #6b6150 !important;
   border-color: #6b6150 !important;
   color: #f4f1ea !important;
@@ -265,7 +404,7 @@ body {
 /* Checkout Page Styles */
 .checkout {
   padding: 20px;
-  background-color: #e0d5c1;
+  background-color: #F7F7F7FA;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -284,7 +423,7 @@ body {
 }
 
 .checkout-button {
-  background-color: #8a7d6b;
+  background-color: #000000B5;
   color: #f4f1ea;
   padding: 10px 20px;
   border: none;
@@ -356,4 +495,58 @@ body {
 /* Add this to your App.css */
 .nav-link img {
   margin-right: 5px;
+}
+
+.logo {
+  float: left;
+  max-width: 100%;
+  height: 70px;
+}
+
+.img-fluid{
+  float: left;
+}
+
+/* ImageCarousel */
+.image-carousel {
+  margin-bottom: 20px;
+}
+
+.carousel-item {
+  position: relative;
+  text-align: center;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* ProductSlider */
+.product-slider {
+  margin-bottom: 30px;
+}
+
+.product-slider-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.product-slider-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.product-slider-item .card {
+  margin: 0 10px; /* Adjust as needed */
 }

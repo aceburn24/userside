@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import ProductList from './components/ProductList';
+import Header from './components/Header'; // Added this line
+import Footer from './components/Footer'; // Added this line
 import ProductDetail from './components/ProductDetail';
 import Cart from './components/Cart';
 import Wishlist from './components/Wishlist';
@@ -11,7 +12,12 @@ import GuestDashboard from './components/GuestDashboard';
 import Checkout from './components/Checkout';
 import OrderConfirmation from './components/OrderConfirmation';
 import UserProfile from './components/UserProfile';
+import ChatBox from './components/Chatbox';
 import { AppProvider } from './components/AppContext';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import HomePage from './components/HomePage'; 
+
 import './App.css';
 
 function App() {
@@ -19,10 +25,11 @@ function App() {
     <AppProvider>
       <AuthProvider>
         <Router>
+          <Header /> {/* Added this line */}
           <Navbar />
           <div className="container">
             <Routes>
-              <Route path="/" element={<ProductList />} />
+            <Route path="/" element={<HomePage />} />
               <Route path="/product/:id" element={<ProductDetail />} />
               <Route path="/wishlist" element={<Wishlist />} />
               <Route path="/cart" element={<Cart />} />
@@ -34,6 +41,8 @@ function App() {
               {/* Add other routes as needed */}
             </Routes>
           </div>
+          <ChatBox /> {/* Here's where you'd add the chatbox */}
+          <Footer /> {/* Added this line */}
         </Router>
       </AuthProvider>
     </AppProvider>
